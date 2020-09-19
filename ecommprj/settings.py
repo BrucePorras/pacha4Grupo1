@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import django_heroku
 import os
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'c(5omj(5_kxv_2^+wrme0rfe+(_&c*%*uq6(&km06t@r@i5q)3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'storages',
+    'herokuapp',
     'ecommapp'
     
 ]
@@ -128,6 +131,13 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 django_heroku.settings(locals())
+
+AWS_MEDIA_STORAGE_BUCKET_NAME = 'grupo1'
+AWS_MEDIA_S3_REGION_NAME = 'us-east-2'
+AWS_MEDIA_ACCESS_KEY_ID = 'AKIAIXZHGFKDSLMCTYUA'
+AWS_MEDIA_SECRET_ACCESS_KEY = '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'
+AWS_MEDIA_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_MEDIA_STORAGE_BUCKET_NAME
+DEFAULT_FILE_STORAGE = 'ecommprj.custom_storages.MediaStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
