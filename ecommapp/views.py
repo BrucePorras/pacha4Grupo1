@@ -49,9 +49,4 @@ class Detalle_pedidoViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication, SessionAuthentication)
     queryset = Detalle_pedido.objects.all()
-<<<<<<< HEAD
     serializer_class = Detalle_pedidoSerializer
-    permission_classes = [permissions.IsAuthenticated]
-=======
-    serializer_class = Detalle_pedidoSerializer
->>>>>>> upstream/master
