@@ -83,7 +83,7 @@ class Pedido(models.Model):
         verbose_name_plural=  'pedidos'
 
 class Detalle_pedido(models.Model):
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    pedido = models.ForeignKey(Pedido, on_delete=models.SET_NULL, blank=True, null=True)
     producto = models.ForeignKey(Producto,on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     subtotal = models.DecimalField(max_digits=10,decimal_places=2)
