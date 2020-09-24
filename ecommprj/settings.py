@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'storages',
     'ecommapp',
+    'rest_framework_swagger',
     'corsheaders'
     
 ]
