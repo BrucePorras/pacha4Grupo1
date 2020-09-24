@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'storages',
-    'ecommapp'
+    'ecommapp',
+    'corsheaders'
     
 ]
 
@@ -56,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
 ]
 
 ROOT_URLCONF = 'ecommprj.urls'
@@ -145,6 +148,8 @@ AWS_MEDIA_ACCESS_KEY_ID = 'AKIAIXZHGFKDSLMCTYUA'
 AWS_MEDIA_SECRET_ACCESS_KEY = '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'
 AWS_MEDIA_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_MEDIA_STORAGE_BUCKET_NAME
 DEFAULT_FILE_STORAGE = 'ecommprj.custom_storages.MediaStorage'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
