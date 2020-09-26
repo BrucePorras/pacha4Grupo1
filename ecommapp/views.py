@@ -100,9 +100,4 @@ def charges(request):
         print(charge)
         dicRes = {'message':'EXITO'}
         return JsonResponse(charge.json(), safe=False)
-
-<<<<<<< HEAD
-        return JsonResponse("only POST method", safe=False)
-=======
     return JsonResponse("only POST method", safe=False)
->>>>>>> upstream/master

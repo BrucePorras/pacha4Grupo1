@@ -5,32 +5,16 @@ from rest_framework import routers
 from ecommapp import views
 from django.conf import settings
 from django.conf.urls.static import static
-<<<<<<< HEAD
-
-from rest_framework_simplejwt import views as jwt_views
-from drf_yasg import openapi
-from rest_framework import permissions
-from drf_yasg.views import get_schema_view
-from django.conf.urls import url
-#yasg
-schema_view = get_schema_view(
-   openapi.Info(
-      title="Snippets API",
-      default_version='v1',
-      description="Test description",
-=======
 from rest_framework_simplejwt import views as jwt_views
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-from ecommapp.views import charges
 
 schema_view = get_schema_view(
    openapi.Info(
       title="PachaQtec Hackaton Final Grupo 1",
       default_version='v1',
       description="Descripcion de APIS",
->>>>>>> upstream/master
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="contact@snippets.local"),
       license=openapi.License(name="BSD License"),
