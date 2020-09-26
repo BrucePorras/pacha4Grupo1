@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_yasg',
-    'rest_framework.authtoken',
+    #'rest_framework.authtoken',
     'rest_auth',
     'storages',
     #'herokuapp',
@@ -69,7 +69,7 @@ ROOT_URLCONF = 'ecommprj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "ecommapp/template")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,13 +156,13 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-         'rest_framework.permissions.IsAdminUser',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+    #'DEFAULT_PERMISSION_CLASSES': (
+     #   'rest_framework.permissions.IsAuthenticated',
+      #   'rest_framework.permissions.IsAdminUser',
+    #),
+    #'DEFAULT_AUTHENTICATION_CLASSES': (
+       # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+    #),
     'DEFAULT_FILTER_BACKENDS':('django_filters.rest_framework.DjangoFilterBackend',),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5
